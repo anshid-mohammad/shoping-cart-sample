@@ -1,0 +1,25 @@
+<section class="login-sec">
+    <div class="">
+        <div class="form-signin ">
+            <form class="bg-light rounded-3 p-4 p-md-5" action="/admin/admin-login" method="post">
+                <h1 class="h3 mb-4 fw-normal text-center">Login as Admin</h1>
+    {{#if loginErr}}
+    <p class="error  text-danger">{{loginErr}}</p>
+    {{/if}} 
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                </div>
+
+                <div class="form-floating">
+                    <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+
+                <a class="float-right" href="/admin/admin-signin">Create new account ?</a>
+
+                <button class="w-25 btn btn-lg btn-primary my-3" style="margin-left: 30rem;" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</section>

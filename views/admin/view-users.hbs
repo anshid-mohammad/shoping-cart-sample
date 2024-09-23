@@ -1,0 +1,73 @@
+<section>
+    <div class="container">
+
+        <div class="d-flex justify-content-between mb-4 mt-5">
+            <form action="" class="row g-2 align-items-center float-start" role="search" method="GET">
+                <div class="col-auto">
+                    <input class="form-control me-2" name="search" type="search" style="width: auto;"
+                        placeholder="Search by name" aria-label="Search">
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </div>
+            </form>
+
+            <div>
+                <a class="btn btn-primary" href="/admin/add-user">Add a user</a>
+            </div>
+        </div>
+
+
+        {{!-- <div class="my-5">
+            <form class="d-flex  float-start mb-4" role="search" method="GET">
+                <input class="form-control me-2" name="search" type="search" placeholder="Search by name"
+                    aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div> --}}
+
+        <table class="table table-light">
+            <thead class="table-secondary">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each userData}}
+                <tr>
+                    {{!-- <td><img src="/product-images/{{this.product._id}}.jpg" alt="{{this.image}}"
+                            style="width: 10rem;">
+                    </td> --}}
+
+                    <td>{{this.name}}</td>
+                    <td>{{this.Email}}</td>
+
+
+
+
+                    {{!-- <td style="width: 10rem;">
+
+                        <button class="btn btn-secondary"
+                            onclick="changeQuantity('{{this._id}}', '{{this.product._id}}','{{../user._id}}',-1)">-</button>
+                        <span id="{{this.product._id}}">{{this.quantity}}</span>
+                        <button class="btn btn-secondary"
+                            onclick="changeQuantity('{{this._id}}', '{{this.product._id}}','{{../user._id}}',1)">+</button>
+
+                    </td> --}}
+                    <td>
+                        <a href="/admin/edit-user/{{this._id}}" class="btn btn-outline-primary">Edit user</a>
+                    </td>
+                    <td>
+                        <a href="/admin/remove-user/{{this._id}}" class="btn btn-outline-danger"
+                            onclick="return confirm('Are you sure you want to remove this user?');">Remove user</a>
+                    </td>
+
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</section>
